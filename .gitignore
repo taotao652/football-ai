@@ -22,3 +22,11 @@ Annotations/
 
 # 系统文件
 .DS_Store
+
+venv/
+__pycache__/
+*.pyc
+runs/
+data/raw/
+.DS_Store
+*.log
