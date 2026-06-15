@@ -1,0 +1,24 @@
+# 虚拟环境（太大，不需要备份）
+venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 训练结果（图片太多，且可以重新生成）
+runs/
+
+# 模型文件（太大，且可以从训练重新生成）
+*.pt
+
+# 数据集（太大，且可以重新下载）
+yolo_dataset/
+JPEGImages/
+Annotations/
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store

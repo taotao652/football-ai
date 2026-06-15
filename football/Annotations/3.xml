@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<annotation>
+  <filename>3.jpeg</filename>
+  <object_num>1</object_num>
+  <size>
+    <width>500</width>
+    <height>313</height>
+  </size>
+  <object>
+    <name>football</name>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>157</xmin>
+      <ymin>5</ymin>
+      <xmax>338</xmax>
+      <ymax>185</ymax>
+    </bndbox>
+  </object>
+</annotation>
