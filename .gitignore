@@ -1,32 +1,51 @@
-# 虚拟环境（太大，不需要备份）
-venv/
-
-# Python 缓存
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 
-# 训练结果（图片太多，且可以重新生成）
-runs/
+# 虚拟环境
+venv/
+env/
+.venv/
 
-# 模型文件（太大，且可以从训练重新生成）
-*.pt
-
-# 数据集（太大，且可以重新下载）
-yolo_dataset/
-JPEGImages/
-Annotations/
-
-# IDE 配置
+# IDE
 .idea/
 .vscode/
+*.swp
+*.swo
+
+# YOLO 模块
+yolo/runs/
+yolo/data/
+yolo/models/*.pt
+!yolo/models/best-v*.pt
+yolo/examples/
+
+# 胜率预测模块
+predict/data/
+predict/models/
+predict/notebooks/
+
+# 数据集相关（这些是原始数据，不需要提交）
+*.zip
+*.tar
+*.gz
+*.csv
+data/raw/
+*.json
+!premier_league_2023.json  # 这个是你已经获取的数据示例，可以提交
 
 # 系统文件
 .DS_Store
-
-venv/
-__pycache__/
-*.pyc
-runs/
-data/raw/
-.DS_Store
+Thumbs.db
 *.log
+
+# 配置文件（如果你有本地私密配置）
+*.local.yaml

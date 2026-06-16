@@ -1,7 +1,0 @@
-path: /home/tao/football-ai/data/person_yolo_dataset
-train: images
-val: images
-
-nc: 2
-names: ['football', 'person']
-
