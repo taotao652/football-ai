@@ -9,6 +9,8 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.pytest_cache/
+.pytest_cache/*
 
 # 虚拟环境
 venv/
@@ -38,9 +40,7 @@ predict/notebooks/
 *.tar
 *.gz
 *.csv
-data/raw/
 *.json
-!premier_league_2023.json  # 这个是你已经获取的数据示例，可以提交
 
 # 系统文件
 .DS_Store
@@ -49,3 +49,4 @@ Thumbs.db
 
 # 配置文件（如果你有本地私密配置）
 *.local.yaml
+.env

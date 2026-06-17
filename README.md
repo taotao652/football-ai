@@ -11,8 +11,9 @@
   - 支持推理、训练和结果可视化
   
 - `predict/` —— 比赛胜率预测模块
-  - 基于英超历史数据（2023-24 赛季）
-  - 提取球队攻防特征，训练分类模型预测胜平负
+  - 基于英超 2022 赛季历史数据
+  - 集成泊松分布 + Elo 评级 + XGBoost 多种模型
+  - 采集详细比赛统计特征（射门、控球、传球等）
 
 ---
 
@@ -29,5 +30,36 @@ cd football-ai
 python3 -m venv venv
 source venv/bin/activate
 
-# 安装基础依赖
-pip install ultralytics pandas scikit-learn球检测模型
+# 安装依赖
+pip install ultralytics pandas scikit-learn xgboost requests
+```
+
+### 2. 配置 API Key（数据采集需要）
+
+```bash
+# 在项目根目录创建 .env 文件
+echo "API_FOOTBALL_KEY=你的密钥" > .env
+```
+
+### 3. 运行预测
+
+```bash
+cd predict
+python ensemble_predict.py   # 集成模型（推荐）
+python poisson_predict.py    # 基础泊松模型
+```
+
+### 4. 采集比赛统计数据（可选，需要 API 配额）
+
+```bash
+cd predict
+python fetch_enriched_data.py  # 自动续传，额度用完自动停止
+```
+
+---
+
+## 📊 当前状态
+
+- 数据采集：2022 赛季进行中（免费 API 每日约 10 次请求）
+- 模型准确率：集成模型 ~51.6%（详见 `predict/MODEL_README.md`）
+- YOLO 检测：预训练模型 `yolo/models/best-v1.0.pt`
